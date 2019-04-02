@@ -22,8 +22,11 @@ tile_photos <- function(in_folder = "//NAS1/NAS3_2Mar15/Images/FC_BBAL_Drone_Ima
                         buff = 30, file_type="jpg") {
   # list files
   file_type_regex<-paste0(".", file_type, "$")
+  if(!utils::file_test("-f",in_folder)){
   files<-list.files(in_folder, full.names = T, pattern = file_type_regex, recursive = F)
-
+  }else{
+  files=in_folder
+}
   #make out dir
   if(!dir.exists(out_folder)){
     dir.create(out_folder, recursive = T)
