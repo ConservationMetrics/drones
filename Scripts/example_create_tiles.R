@@ -13,7 +13,7 @@ library(lubridate)
 
 # image manipulation
 library(magick)
-
+library(drones)
 
 # tile images to fit algorithm
 # -resolution is dependent on the base model that you are using for transfer learning
@@ -22,7 +22,7 @@ library(magick)
 
 # Tile photos -------------------------------------------------------------
 # figure out how many crops you might want
-img2<-image_read("//NAS1/NAS3_2Mar15/Images/CMI_Office_2015/2reorg/IMG_0045__20150425_161318.JPG" )
+img2<-image_read("C:/Users/ConservationMetrics/Desktop/tupu_tagging/Images/P1160482.JPG_3264_0.JPG" )
 img_info<-image_info(img2)
 
 # horizontal option
@@ -54,8 +54,8 @@ img2
 
 # Run the function
 
-tile_photos(in_folder=paste0(nas_image_dir,"/2reorg"),
-            out_folder=paste0(nas_image_dir,"/3tiled"),
-            width = 1000, height=600, buff=60,file_type = "JPG")
+tile_photos(in_folder='C:/Users/ConservationMetrics/Desktop/tupu_tagging/Images/P1160482.JPG_3264_0.JPG',
+            out_folder=paste0('C:/Users/ConservationMetrics/Desktop/tupu_tagging/Images',"/3tiled"),
+            width = 408, height=306, buff=60,file_type = "JPG")
 
 
