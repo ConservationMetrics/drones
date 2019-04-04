@@ -58,7 +58,7 @@ tile_photos <- function(in_folder = "//NAS1/NAS3_2Mar15/Images/FC_BBAL_Drone_Ima
 
     corners<-expand.grid(corner_x=(0:(n_horz-1))*width, corner_y=(0:(n_vert-1))*height)
 
-    crop_paths<-file.path(out_folder,paste0(file_name,"_",round(corners$corner_x),"_",round(corners$corner_y),".JPG"))
+    crop_paths<-file.path(out_folder,paste0(file_name,"_",round(corners$corner_x),"_",round(corners$corner_y),".",file_type))
 
     pmap(.l = list(crop_paths,corners$corner_x,corners$corner_y),
          .f = function(x,y,z) make_one_tile(crop_path=x,corner_x=y,corner_y=z,img=img,buff=buff,width=width,height=height))
